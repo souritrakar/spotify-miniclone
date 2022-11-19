@@ -28,7 +28,7 @@ export default function Login({providers}){
                     Object.values(providers).map((provider, key)=>{
                         return(
                             <a key={key}>
-                            <button onClick={()=>{signIn(provider.id, {callbackUrl:'/'} )}} className="btn lg:mt-12 mt-6 btn-wide bg-green-500 hover:bg-green-600 text-white ">LOGIN WITH {provider.name}</button>
+                            <button onClick={()=>{signIn(provider.id, {callbackUrl:'https://spotify-miniclone.vercel.app/'} )}} className="btn lg:mt-12 mt-6 btn-wide bg-green-500 hover:bg-green-600 text-white ">LOGIN WITH {provider.name}</button>
                             </a>
                         )
                     })
