@@ -31,7 +31,7 @@ export default function SongRow({track, id}){
         <th className="font-normal">{id+1}</th>
         <td>
             <div className="flex">
-            <img src={track?.album?.images?.[0].url} className='w-12 h-12'/>
+            <img src={track?.album?.images?.[0].url} className='w-12 h-12' alt="Album Image"/>
             <div>
             <a href={track?.external_urls.spotify} className='hover:underline'  target="_blank" rel="noreferrer">
                 <h1 className="ml-4 font-semibold">{track?.name}</h1>

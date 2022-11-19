@@ -49,7 +49,7 @@ export default function Center(){
         })
         }
 
-    }, [playlistId])
+    }, [playlistId, spotifyAPI])
 
     const copyPlaylistLink = (link) =>{
         navigator.clipboard.writeText(link).then(()=>{
@@ -69,7 +69,7 @@ export default function Center(){
             <Header/>
 
             <div className="lg:ml-8 lg:mt-10 ml-4 mt-6 flex pb-4 text-white">
-                <img src={playlist?.images?.[0]?.url} className='lg:w-56 lg:h-56 md:w-48 md:h-48 w-32 h-32 shadow-xl rounded-xl'/>
+                <img src={playlist?.images?.[0]?.url} className='lg:w-56 lg:h-56 md:w-48 md:h-48 w-32 h-32 shadow-xl rounded-xl' alt="Song"/>
         
                 <div className="lg:ml-6 ml-2 lg:mt-4">
                     <h1 className="lg:text-7xl text-2xl md:text-5xl font-bold">{playlist?.name}</h1>
@@ -135,7 +135,7 @@ export default function Center(){
                 {playlist?.tracks?.items?.map((track, key)=>{
         
                     return(
-                        <SongRow track={track.track} id={key}/>
+                        <SongRow track={track.track} id={key} key={key}/>
                     )
                 })}
 

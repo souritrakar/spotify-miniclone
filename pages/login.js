@@ -21,12 +21,13 @@ export default function Login({providers}){
              width={'260'}
              height={'260'}
              className='mx-auto mt-10'
+             alt="Spotify Logo"
             />
             <center>
                 {
-                    Object.values(providers).map(provider=>{
+                    Object.values(providers).map((provider, key)=>{
                         return(
-                            <a>
+                            <a key={key}>
                             <button onClick={()=>{signIn(provider.id, {callbackUrl:'/'} )}} className="btn lg:mt-12 mt-6 btn-wide bg-green-500 hover:bg-green-600 text-white ">LOGIN WITH {provider.name}</button>
                             </a>
                         )

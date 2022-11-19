@@ -32,6 +32,7 @@ export default function Sidebar(){
              loader={() => src} 
              src={src} 
              className="lg:w-48 w-40 ml-2"
+             alt="Spotify Logo"
          />
 
         <SidebarTab title={'Home'} Icon={<HomeIcon className={tabClass}/>}/>

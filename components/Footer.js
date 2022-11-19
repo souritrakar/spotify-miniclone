@@ -31,7 +31,7 @@ export default function Footer(){
             getCurrent()
             setVolume(50)
         }
-    }, [trackIdState, spotifyAPI, session])
+    }, [trackId, spotifyAPI, session])
     
     return(
         <div className="sticky bottom-0 bg-[#1f222a] w-full lg:h-24 pt-4 lg:pb-0 pb-4">
@@ -39,7 +39,7 @@ export default function Footer(){
             <div className="flex">
 
                 <div className="flex">
-                    <img className="lg:w-16 lg:h-16 h-12 w-12 lg:ml-4 ml-2" src={songInfo?.album.images?.[0]?.url}/>
+                    <img className="lg:w-16 lg:h-16 h-12 w-12 lg:ml-4 ml-2" src={songInfo?.album.images?.[0]?.url} alt="Song"/>
                     <div className="lg:mt-2">
                         <a href={songInfo?.external_urls.spotify} className='hover:underline'  target="_blank" rel="noreferrer">
                             <h1 className="ml-4 ont-semibold text-white">{songInfo?.name}</h1>

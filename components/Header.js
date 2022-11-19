@@ -20,7 +20,7 @@ export default function Header(){
         <div className=" mt-6 lg:mr-12 mr-2 flex lg:flex-row flex-col lg:ml-0 ml-8 lg:bg-gray-100 lg:h-10 lg:pr-4 lg:pl-2 rounded-full">
         <div className="avatar mr-2 lg:mt-1">
             <div className="w-8 rounded-full h-8">
-                <img src={img ? img : `https://ui-avatars.com/api/?name=${session?.user?.name}`} />
+                <img src={img ? img : `https://ui-avatars.com/api/?name=${session?.user?.name}`} alt="User Image" />
             </div>
         </div>
 
