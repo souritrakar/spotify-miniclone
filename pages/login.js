@@ -5,7 +5,6 @@ import {getProviders, signIn} from 'next-auth/react'
 export default function Login({providers}){
 
     const src = 'https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg'
-
     return(
         
          <div className="bg-black min-h-screen pb-4">
@@ -25,10 +24,10 @@ export default function Login({providers}){
             />
             <center>
                 {
-                    Object.values(providers).map((provider, key)=>{
+                    providers && Object.values(providers).map((provider, key)=>{
                         return(
                             <a key={key}>
-                            <button onClick={()=>{signIn(provider.id, {callbackUrl:'https://spotify-miniclone.vercel.app/'} )}} className="btn lg:mt-12 mt-6 btn-wide bg-green-500 hover:bg-green-600 text-white ">LOGIN WITH {provider.name}</button>
+                            <button onClick={()=>{signIn(provider?.id, {callbackUrl:'/'} )}} className="btn lg:mt-12 mt-6 btn-wide bg-green-500 hover:bg-green-600 text-white ">LOGIN WITH {provider.name}</button>
                             </a>
                         )
                     })
@@ -40,12 +39,9 @@ export default function Login({providers}){
     )
 }
 
-export async function getServerSideProps(){
-    const providers = await getProviders()
-
+export async function getStaticProps(context) {
+    const providers = await getProviders(context)
     return {
-        props:{
-            providers
-        }
+      props: { providers },
     }
-}
+  }

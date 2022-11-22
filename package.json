@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "proxy": "https://spotify-miniclone.vercel.app/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@heroicons/react": "^2.0.12",
+    "@netlify/plugin-nextjs": "^4.29.2",
     "daisyui": "^2.33.0",
     "framer-motion": "^6.5.1",
     "lodash": "^4.17.21",
